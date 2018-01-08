@@ -5,32 +5,29 @@ import random
 
 class Hill(Cipher):
     def __init__(self,key_martix):
-        self.random_number = random.randint(2,5)
-        self.key_martix =  np.random.random_integers(0,25,(self.random_number,self.random_number))
-        #string = []
-        print(self.key_martix)
-        #print(self.key_matrix)
-        #for key in self.key_matrix:
-            #print(key)
-
-            #for dooda in key:
-                #string.append(chr(dooda + 65))
+        self.key_martix =  np.array([[26,24,1],
+                                    [13,16,10],
+                                    [20,17,15]])
 
 
-
-        #print("".join(string))
     def encrypt(self,text):
         text = text.upper()
+        string = []
         temp = list(text)
         numbers_text = []
         matrix_text = []
-        for letter in temp:
-            numbers_text.append([ord(letter) - ord("A")])
-        matrix_text = np.matrix(numbers_text)
-        print(matrix_text)
-        mate = matrix_text * self.key_martix
+        if len(text ) == 3:
+            for letter in temp:
+                numbers_text.append([ord(letter) - ord("A")])
+            matrix_text = self.key_martix.dot(np.array(numbers_text))
+            matrix_text %= 26
 
-        print(mate % 26)
+            for key in matrix_text:
+                for dooda in key:
+                    string.append(chr(dooda+65))
+        else:
+            print("word has more than three words")
+        print("".join(string))
 
 
 

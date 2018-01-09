@@ -38,15 +38,5 @@ def main():
         encrypted_message = cipher_text.decrypt(message)
 
     print("Your {}ed message is {} ".format(what_to_do,encrypted_message))
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     main()

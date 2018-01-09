@@ -4,7 +4,7 @@ import random
 
 
 class Hill(Cipher):
-    def __init__(self,key_martix):
+    def __init__(self):
         self.key_martix =  np.array([[26,24,1],
                                     [13,16,10],
                                     [20,17,15]])
@@ -28,9 +28,3 @@ class Hill(Cipher):
         else:
             print("word has more than three words")
         print("".join(string))
-
-
-
-
-mate = Hill(5)
-mate.encrypt("ACT")

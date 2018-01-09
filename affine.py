@@ -13,6 +13,7 @@ class Affine(Cipher):
                 string.append(chr((self.alphabet_keys[letter] * 5 + 8)%26 + 65))
             else:
                 string.append(letter)
+
         return "".join(string)
 
     def decrypt(self,cipher_text):
@@ -23,4 +24,5 @@ class Affine(Cipher):
                 string.append(chr(((self.alphabet_keys[letter] - 8 )* 21)%26 + 65))
             else:
                 string.append(letter)
+
         return "".join(string)

@@ -20,12 +20,9 @@ def main():
         cipher_text = Atbash()
     elif answer == "KeyWord":
         keyword = input("what key word would you like to use")
-        try:
-            cipher_text = KeyWords(keyword)
-        except TypeError:
-            print("your key will be KEYWORD")
-        else:
-            cipher_text = KeyWords()
+
+        cipher_text = KeyWords(keyword)
+
     elif answer == "Affine":
         cipher_text = Affine()
 

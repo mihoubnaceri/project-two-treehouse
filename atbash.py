@@ -7,6 +7,7 @@ class Atbash(Cipher):
         self.output = []
 
     def encrypt(self,text):
+        text = text.upper()
         self.output = []
         for letter in text:
             if letter in string.ascii_uppercase:

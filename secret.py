@@ -2,6 +2,7 @@ from keywords import KeyWords
 from atbash import Atbash
 from keywords import KeyWords
 from hill import Hill
+from affine import Affine
 
 
 def main():
@@ -9,7 +10,7 @@ def main():
     print("This is the Secret Messages project for the Treehouse Techdegree \n")
     cipher_text = None
     print("These are the current available ciphers:\n")
-    ciphers = ["Caesar","Atbash","Keyword","Hill"]
+    ciphers = ["Caesar","Atbash","Keyword","Affine"]
     for cipher in ciphers:
         print("- {}".format(cipher))
 
@@ -25,8 +26,8 @@ def main():
             print("your key will be KEYWORD")
         else:
             cipher_text = KeyWords()
-    elif answer == "Hill":
-        cipher_text = Hill()
+    elif answer == "Affine":
+        cipher_text = Affine()
 
     else:
         print("not a valid cipher")
@@ -38,5 +39,12 @@ def main():
         encrypted_message = cipher_text.decrypt(message)
 
     print("Your {}ed message is {} ".format(what_to_do,encrypted_message))
+    regame = input("Do you want to encrypt/decrypt again y/n ")
+    if regame.lower() == "y" :
+        main()
+    else:
+        print("Good bye hope you had fun {}ing ".format(what_to_do))
+
+
 if __name__ == "__main__":
     main()

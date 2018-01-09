@@ -18,7 +18,7 @@ class KeyWords(Cipher):
             if letter in new_dict.keys():
                 string_text+= new_dict[letter]
             else:
-                string_text += letter
+                string_text += letter        
 
         return string_text
 

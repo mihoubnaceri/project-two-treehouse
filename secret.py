@@ -24,10 +24,12 @@ def main():
             break
         elif answer.lower() == "keyword":
             keyword = input("what key word would you like to use ")
-
-
-            cipher_text = KeyWords(keyword)
-            break
+            if keyword == None or keyword == "":
+                cipher_text=KeyWords()
+                break
+            else:
+                cipher_text = KeyWords(keyword)
+                break
 
         elif answer.lower() == "affine":
             cipher_text = Affine()

@@ -3,7 +3,7 @@ import string
 
 
 class KeyWords(Cipher):
-    def __init__(self,keyword = "Treehouse"):
+    def __init__(self,keyword = "keyword"):
         self.keyword = []
         self.alphabets  = list(string.ascii_uppercase)
         for num in keyword.upper():
@@ -21,8 +21,7 @@ class KeyWords(Cipher):
         alphabets[:len(self.keyword)] = self.keyword
 
         alphabets.extend([letter for letter in self.alphabets if not letter in alphabets])
-        print(alphabets)
-        print(self.alphabets)
+
         new_dict = {key: value for key, value in zip(self.alphabets,alphabets)}
         #print(new_dict)
         for letter in text:
